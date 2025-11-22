@@ -4,66 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OtakuList</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header>
-    
-<nav>
-  <ul>
-    <li class="logo">
-      <a href="#">
-        <img src="logo.otakulist.png" alt="OtakuList Logo"> 
-      </a>
-    </li>
-   <li><a href="/animes">Animes</a></li>
-    <li><a href="#">Procurar</a></li>
-    <li><a href="#">Minha Lista</a></li>
-    <li><a href="#">Entrar</a></li>
-    <li><a href="#">Cadastrar-se</a></li>
-  </ul>
-</nav>
+    <nav>
+        <ul>
+            <li><a href="/">OtakuList</a></li>
+            <li><a href="/animes">Animes</a></li>
+            <li><a href="/minha-lista">Minha Lista</a></li>
+            <li><a href="/perfil">Perfil</a></li>
+        </ul>
+    </nav>
 </header>
-<section class="hero">
-  <div class="hero-content">
+
+<section>
     <h1>Acompanhe seus animes favoritos</h1>
     <p>Descubra, organize e salve os que você quer assistir.</p>
-    <div class="hero-buttons">
-      <a href="#" class="btn start">Comece Agora</a>
-    </div>
-  </div>
 </section>
-<script src="script.js"></script>
 
- <h2>Populares</h2>
+<h2>Populares</h2>
 <ul>
-  {% for anime in populares %}
-  <li>
-    <img src="{{ anime.coverImage.large }}" width="100">
-    <p>{{ anime.title.romaji or anime.title.english }}</p>
-  </li>
-  {% endfor %}
+    {% for anime in populares %}
+    <li>
+        <img src="{{ anime.coverImage.large }}" width="150">
+        <p>{{ anime.title.romaji or anime.title.english or anime.title.native }}</p>
+        <button 
+            data-id="{{ anime.id }}" 
+            data-title="{{ anime.title.romaji or anime.title.english or anime.title.native }}" 
+            data-cover="{{ anime.coverImage.large }}"
+            onclick="addToListFromButton(this)">
+            Adicionar
+        </button>
+    </li>
+    {% endfor %}
 </ul>
 
 <h2>Tendência</h2>
 <ul>
-  {% for anime in trends %} ]]
-  <li>
-    <img src="{{ anime.coverImage.large }}" width="100">
-    <p>{{ anime.title.romaji or anime.title.english }}</p>
-  </li>
-  {% endfor %}
+    {% for anime in trends %}
+    <li>
+        <img src="{{ anime.coverImage.large }}" width="150">
+        <p>{{ anime.title.romaji or anime.title.english or anime.title.native }}</p>
+        <button 
+            data-id="{{ anime.id }}" 
+            data-title="{{ anime.title.romaji or anime.title.english or anime.title.native }}" 
+            data-cover="{{ anime.coverImage.large }}"
+            onclick="addToListFromButton(this)">
+            Adicionar
+        </button>
+    </li>
+    {% endfor %}
 </ul>
 
 <h2>Populares da Temporada</h2>
 <ul>
-  {% for anime in temporada %}
-  <li>
-    <img src="{{ anime.coverImage.large }}" width="100">
-    <p>{{ anime.title.romaji or anime.title.english }}</p>
-  </li>
-  {% endfor %}
+    {% for anime in temporada %}
+    <li>
+        <img src="{{ anime.coverImage.large }}" width="150">
+        <p>{{ anime.title.romaji or anime.title.english or anime.title.native }}</p>
+        <button 
+            data-id="{{ anime.id }}" 
+            data-title="{{ anime.title.romaji or anime.title.english or anime.title.native }}" 
+            data-cover="{{ anime.coverImage.large }}"
+            onclick="addToListFromButton(this)">
+            Adicionar
+        </button>
+    </li>
+    {% endfor %}
 </ul>
 
+<script src="/static/app.js"></script>
 </body>
 </html>
