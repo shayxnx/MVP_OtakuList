@@ -1,0 +1,117 @@
+/* ======== CORES GERAIS ======== */
+body {
+    margin: 0;
+    background: #363636;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+/* REMOVE qualquer caixa ou borda do header */
+header {
+    background: #1C1C1C;
+    padding: 0;
+    margin: 0;
+    border: none;
+    box-shadow: none;
+}
+
+/* ===== NAV BAR ===== */
+nav {
+    width: 100%;
+    background: #1C1C1C !important;
+    padding: 15px 30px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    border-radius: 0 !important;
+    margin: 0;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Remove QUALQUER estilo herdado do UL */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+
+    margin: 0;
+    padding: 0;
+
+    background: none;
+    border-radius: 0;
+}
+
+/* Links simples */
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+
+    padding: 0;
+    margin: 0;
+
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+}
+
+nav ul li a:hover {
+    color: #b8b8ff;
+}
+/* ======== HERO (CAPA) ======== */
+section {
+    width: 100%;
+    height: 380px; /* ajuste como quiser: 320, 380, 450… */
+    
+    background-image: url("/static/img/capa.anime3.jpg");
+    background-size: cover;      /* preenche sem deformar */
+    background-position: center; /* foca no meio da imagem */
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-left: 40px;
+
+    color: white;
+}
+
+
+section h1 {
+    font-size: 34px;
+    font-weight: 700;
+    max-width: 600px;
+}
+
+section p {
+    font-size: 18px;
+    max-width: 600px;
+    margin-top: -10px;
+}
+
+/* ======== TITULOS ======== */
+h2 {
+    margin: 30px 20px 10px 20px;
+}
+
+/* ======== LISTA DE ANIMES ======== */
+ul {
+    padding: 0;
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+ul li {
+    list-style: none;
+    background: #2e2e2e;
+    padding: 15px;
+    border-radius: 8px;
+    width: 160px;
+}

@@ -10,7 +10,7 @@ def fetch_data(query ):
 def get_popular_animes():
     query = """
     query {
-      Page(page: 1, perPage: 6) {
+      Page(page: 1, perPage: 9) {
         media(type: ANIME, sort: POPULARITY_DESC) {
           id
           title { romaji english native }
@@ -24,7 +24,7 @@ def get_popular_animes():
 def get_trending_animes():
     query = """
     query {
-      Page(page: 1, perPage: 6) {
+      Page(page: 1, perPage: 9) {
         media(type: ANIME, sort: TRENDING_DESC) {
           id
           title { romaji english native }
@@ -38,7 +38,7 @@ def get_trending_animes():
 def get_seasonal_animes():
     query = """
     query {
-      Page(page: 1, perPage: 6) {
+      Page(page: 1, perPage: 9) {
         media(type: ANIME, sort: POPULARITY_DESC, season: FALL, seasonYear: 2025) {
           id
           title { romaji english native }
@@ -52,7 +52,7 @@ def get_seasonal_animes():
 def get_all_animes():
     query = """
     query {
-      Page(page: 1, perPage: 20) {
+      Page(page: 1, perPage: 200) {
         media(type: ANIME, sort: POPULARITY_DESC) {
           id
           title { romaji english native }

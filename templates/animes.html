@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todos os Animes - OtakuList</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 <header>
@@ -19,11 +20,23 @@
 
 <h1>Todos os Animes</h1>
 
-<ul>
+<input 
+    type="text" 
+    id="searchBar" 
+    placeholder="Pesquisar anime..."
+    style="padding: 10px; width: 60%; max-width: 400px; margin: 15px 0; font-size: 16px;">
+<br>
+
+<ul id="animeList">
     {% for anime in animes %}
-    <li>
-        <img src="{{ anime.coverImage.large }}" width="150" alt="{{ anime.title.romaji or anime.title.english or anime.title.native }}">
-        <h3>{{ anime.title.romaji or anime.title.english or anime.title.native }}</h3>
+    <li class="anime-item">
+        <img src="{{ anime.coverImage.large }}" width="150" 
+             alt="{{ anime.title.romaji or anime.title.english or anime.title.native }}">
+        
+        <h3 class="anime-title">
+            {{ anime.title.romaji or anime.title.english or anime.title.native }}
+        </h3>
+
         <button 
             data-id="{{ anime.id }}" 
             data-title="{{ anime.title.romaji or anime.title.english or anime.title.native }}" 
@@ -36,5 +49,7 @@
 </ul>
 
 <script src="/static/app.js"></script>
+<script src="/static/search.js"></script>
+
 </body>
 </html>
