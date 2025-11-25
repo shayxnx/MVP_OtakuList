@@ -31,3 +31,4 @@ def my_list():
 @app.route('/perfil')
 def profile():
     return render_template('perfil.html')
+
