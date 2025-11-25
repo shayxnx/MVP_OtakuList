@@ -1,4 +1,3 @@
-// Função auxiliar para adicionar do botão
 function addToListFromButton(button) {
     const id = parseInt(button.getAttribute('data-id'));
     const title = button.getAttribute('data-title');
