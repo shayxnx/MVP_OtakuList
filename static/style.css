@@ -1,117 +1,181 @@
-/* ======== CORES GERAIS ======== */
 body {
     margin: 0;
-    background: #363636;
+    background-color: #1B1B1F; 
     font-family: Arial, sans-serif;
-    color: #fff;
+    color: #EDEDED; 
 }
 
-/* REMOVE qualquer caixa ou borda do header */
+
 header {
-    background: #1C1C1C;
-    padding: 0;
-    margin: 0;
-    border: none;
-    box-shadow: none;
-}
-
-/* ===== NAV BAR ===== */
-nav {
-    width: 100%;
-    background: #1C1C1C !important;
+    background-color: #161619; 
     padding: 15px 30px;
-
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-
-    border-radius: 0 !important;
-    margin: 0;
-    border: none !important;
-    box-shadow: none !important;
 }
 
-/* Remove QUALQUER estilo herdado do UL */
 nav ul {
     list-style: none;
     display: flex;
-    gap: 30px;
-
+    gap: 20px;
     margin: 0;
     padding: 0;
-
-    background: none;
-    border-radius: 0;
 }
 
-/* Links simples */
 nav ul li a {
     text-decoration: none;
-    color: white;
+    color: #EDEDED;
     font-weight: 500;
-    font-size: 16px;
-
-    padding: 0;
-    margin: 0;
-
-    background: none !important;
-    border: none !important;
-    border-radius: 0 !important;
+    padding: 6px 12px;
+    border-radius: 20px;
+    transition: all 0.2s ease;
 }
 
 nav ul li a:hover {
-    color: #b8b8ff;
+    background-color: #2E3151; 
+    color: #FFFFFF;
+    transform: scale(1.05);
 }
-/* ======== HERO (CAPA) ======== */
+
+
 section {
     width: 100%;
-    height: 380px; /* ajuste como quiser: 320, 380, 450… */
-    
+    height: 380px;
     background-image: url("/static/img/capa.anime3.jpg");
-    background-size: cover;      /* preenche sem deformar */
-    background-position: center; /* foca no meio da imagem */
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    padding-left: 40px;
-
-    color: white;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    color: #FFFFFF;
 }
 
-
 section h1 {
-    font-size: 34px;
-    font-weight: 700;
-    max-width: 600px;
+    font-size: 42px;
+    font-weight: 800;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.7);
+    letter-spacing: 1px;
+    white-space: nowrap;
 }
 
 section p {
-    font-size: 18px;
-    max-width: 600px;
-    margin-top: -10px;
+    font-size: 20px;
+    opacity: 0.95;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    margin-top: 10px;
 }
 
-/* ======== TITULOS ======== */
+
 h2 {
     margin: 30px 20px 10px 20px;
+    font-size: 24px;
+    color: #EDEDED;
 }
 
-/* ======== LISTA DE ANIMES ======== */
+
+#searchBar {
+    padding: 10px 15px;
+    width: 60%;
+    max-width: 400px;
+    margin: 15px 0;
+    font-size: 16px;
+    border-radius: 25px;
+    border: 1px solid #2E3151;
+    background-color: #2C2F3F; 
+    color: #EDEDED;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+#searchBar::placeholder {
+    color: #B0B0C0;
+}
+
+#searchBar:focus {
+    border-color: #FF4971; 
+    box-shadow: 0 0 6px rgba(255,73,113,0.5);
+}
+
+
 ul {
     padding: 0;
     margin: 20px;
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
+    justify-content: center;
 }
 
 ul li {
     list-style: none;
-    background: #2e2e2e;
+    background-color: #2C2F3F; 
     padding: 15px;
     border-radius: 8px;
     width: 160px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ul li img {
+    width: 150px;
+    border-radius: 4px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+ul li p,
+ul li h3.anime-title {
+    font-size: 14px;
+    text-align: center;
+    margin: 5px 0 10px 0;
+    color: #EDEDED;
+}
+
+
+button,
+.add-btn,
+.btn {  /* qualquer botão que use classe btn ou add-btn */
+    padding: 6px 12px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    background-color: #2E3151; 
+    color: #FFFFFF;            
+    font-weight: bold;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+button:hover,
+.add-btn:hover,
+.btn:hover {
+    transform: scale(1.15);
+    background-color: #9FB1D9; 
+    box-shadow: 0 6px 10px rgba(0,0,0,0.4);
+}
+
+.plus-icon {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+footer {
+    margin-top: 28px;
+    text-align: center;
+    color: #9FB1D9; 
+    font-size: 14px;
+}
+
+div > button {
+    margin-right: 8px;  
+    margin-bottom: 8px; 
 }
