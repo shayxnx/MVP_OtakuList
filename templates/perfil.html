@@ -46,10 +46,7 @@
 
 <script src="/static/app.js"></script>
 <script>
-    // Você precisará de um arquivo JS separado para lidar com a submissão do formulário de edição.
-    // displayStats( ); // Mantenha a chamada original.
-
-    // --- Lógica de Edição de Perfil ---
+   
     const formEdicao = document.getElementById('formEdicaoNome');
     const msgEdicao = document.getElementById('msg-edicao');
     const userNameElement = document.getElementById('user-name');
@@ -66,17 +63,17 @@
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                // Envia o novo nome como JSON para a rota no routes.py
+                
                 body: JSON.stringify({ nome: novoNome })
             });
             
             const data = await response.json();
 
             if (data.success) {
-                // Atualiza a interface (Frontend)
+                
                 userNameElement.textContent = data.novo_nome;
                 msgEdicao.textContent = '✅ Perfil atualizado!';
-                // Recarrega a página para atualizar a sessão do Flask (Melhor prática)
+                
                 window.location.reload(); 
             } else {
                 msgEdicao.textContent = `❌ Erro: ${data.message}`;
