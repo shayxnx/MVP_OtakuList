@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil - OtakuList</title>
+    <title>Login - OtakuList</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
@@ -24,25 +24,25 @@
     </ul>
 </nav>
 
-<h1>Perfil</h1>
 
-<div>
-    <img id="user-avatar" src="/static/img/avatar.jpg" width="100" alt="Avatar">
-    <h2 id="user-name">Carregando...</h2>
-    <p id="user-username"></p>
+<h1>Entrar</h1>
+
+<div class="form-container">
+    <form id="loginForm">
+        <label>Email</label>
+        <input type="email" id="email" required>
+
+        <label>Senha</label>
+        <input type="password" id="password" required>
+
+        <button type="submit">Entrar</button>
+    </form>
+
+    <p id="login-error" class="error"></p>
 </div>
 
-<div>
-    <h3>Estatísticas</h3>
-    <p>Total: <span id="stat-total">0</span></p>
-    <p>Assistindo: <span id="stat-watching">0</span></p>
-    <p>Assistidos: <span id="stat-completed">0</span></p>
-    <p>Dropados: <span id="stat-dropped">0</span></p>
-</div>
+<script src="/static/login.js"></script>
+<script src="/static/nav.js"></script>
 
-<script src="/static/app.js"></script>
-<script>
-    displayStats( );
-</script>
 </body>
 </html>
